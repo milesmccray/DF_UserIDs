@@ -1,2 +1,2 @@
 # DF_UserIDs
-Grabs top 1000 ID:User pairings and generates a JSON file.
+Grabs the top 1000 users and their IDs from (https://dustkid.com/rankings/all) then generates a JSON file
