@@ -11,11 +11,12 @@ def create_JSON():
 	request = requests.get('https://dustkid.com/rankings/all')
 	html = BeautifulSoup(request.content, 'html.parser')
 
+	user_name = {}
 	user_ids = {}
 	pattern = 'profile\/([0-9]+)\/.*>(.*)<'  # Regex pattern
 
-	# Grabs the levels the 4th <p> tag (SS User List\) and then grabs all the associated <a> tags
-	user_data = (html.find_all('p')[3]).find_all('a')
+	# Grabs the levels the 6th <p> tag (Overall User List) and then grabs all the associated <a> tags
+	user_data = (html.find_all('p')[5]).find_all('a')
 	for user_string in user_data:
 		try:
 			user_id = re.search(pattern, str(user_string)).group(1)
